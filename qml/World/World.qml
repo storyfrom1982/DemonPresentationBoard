@@ -72,17 +72,20 @@ Item{
 
     function createElement(type, properties){
         var component = Qt.createComponent(Element.path(type))
-        if(component.status === Component.Ready){
-            var obj = component.createObject(iboard.elementContainer,properties)
-            if(properties.common!==undefined){
-                obj.fromJson(properties)
-                obj.fromJsonBase(properties.common)
-            }else{
-                obj.created()
+        if(component.status !== Component.Ready){
+            if(component.status === Component.Error){
+                console.debug("Error:"+ component.errorString())
+                return null
             }
-            return obj
         }
-        return null
+        var obj = component.createObject(iboard.elementContainer,properties)
+        if(properties.common!==undefined){
+            obj.fromJson(properties)
+            obj.fromJsonBase(properties.common)
+        }else{
+            obj.created()
+        }
+        return obj
     }
     function clear(){
         for(var i= 0;i<iboard.elementContainer.children.length;i++){

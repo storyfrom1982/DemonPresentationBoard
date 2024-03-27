@@ -6,8 +6,8 @@ Item {
     id: iboard
 
     antialiasing: true
-    width: 1920*4
-    height: 1080*4
+    width: 1920 * 4
+    height: 1080 * 4
 
     property alias elementContainer: ielementContainer
     property alias background: ibackground

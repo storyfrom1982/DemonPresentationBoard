@@ -5,17 +5,17 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickStyle>
-#include <QSplashScreen>
+// #include <QSplashScreen>
 
 int
 main(int argc, char* argv[]) {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    // QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QApplication app(argc, argv);
     app.setApplicationName("demon-presentation-board");
     app.setOrganizationName("waterbear");
-    QQuickStyle::setStyle("material");
-    QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
+    // QQuickStyle::setStyle("material");
+    // QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
 
     UpnpManager upnpmanager;
     upnpmanager.handleSearch = true;
@@ -29,7 +29,9 @@ main(int argc, char* argv[]) {
     engine.rootContext()->setContextProperty("fileio", &fileio);
     engine.rootContext()->setContextProperty("upnp", &upnpmanager);
 
-    engine.load(QUrl(QStringLiteral("qrc:/src/qml/main.qml")));
+    QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QApplication::quit);
+
+    engine.load(QUrl(QStringLiteral("qrc:/qt/qml/DPBEditor/qml/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 

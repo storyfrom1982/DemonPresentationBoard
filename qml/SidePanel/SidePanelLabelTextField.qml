@@ -1,7 +1,7 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.5
-import QtQuick.Controls.Material 2.3
-import QtQuick.Layouts 1.12
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Material
+import QtQuick.Layouts
 
 RowLayout {
     id: iroot
@@ -11,7 +11,7 @@ RowLayout {
     property alias text: itext.text
     property alias textFocus: itext.focus
     property int labelSize: ilable.paintedWidth
-    property alias validationRegex: iregex.regExp
+    property alias validationRegex: iregex.regularExpression
     property alias isValid: itext.acceptableInput
     Label{
         id: ilable
@@ -23,7 +23,7 @@ RowLayout {
         Layout.fillWidth: true
         selectByMouse: true
         property var lastText
-        validator: RegExpValidator{
+        validator: RegularExpressionValidator{
             id: iregex
         }
         onFocusChanged: {

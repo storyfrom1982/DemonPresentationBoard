@@ -13,7 +13,7 @@ Item{
     property string tempName: ""
     property int velocity: 0
     property string color: "background"
-    property string source: "qrc:/res/res/backgrounds/pattern-10.svg"
+    property string source: "qrc:/qt/qml/DPBEditor/res/backgrounds/pattern-10.svg"
     property int quality: 20
     property int tileH : 5;
     property int tileV : 5;

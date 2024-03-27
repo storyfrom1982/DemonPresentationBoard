@@ -1,7 +1,7 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.5
-import QtQuick.Controls.Material 2.3
-import QtQuick.Window 2.12
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Material
+import QtQuick.Window
 import "SidePanel"
 import "SidePanel/Chart"
 import "Theme"
@@ -28,11 +28,11 @@ ApplicationWindow {
 
     FontLoader{
         id: ifontAwsome
-        source: "qrc:/res/res/Font Awesome 5 Pro-Solid-900.otf"
+        source: "qrc:/qt/qml/DPBEditor/res/Font Awesome 5 Pro-Solid-900.otf"
     }
     FontLoader{
         id: ifontAwsomereg
-        source: "qrc:/res/res/Font Awesome 5 Pro-Regular-400.otf"
+        source: "qrc:/qt/qml/DPBEditor/res/Font Awesome 5 Pro-Regular-400.otf"
     }
     World{
         id: iworld

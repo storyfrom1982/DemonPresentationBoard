@@ -48,7 +48,7 @@ CustomDialog {
                 ifileManager.newButtonTriggered()
             }
             onItemClicked: {
-                ifileManager.openAccepted(":/res/res/"+subtitle)
+                ifileManager.openAccepted(":/qt/qml/DPBEditor/res/"+subtitle)
                 ifileManager.resetFile()
                 iwelcome.close()
             }

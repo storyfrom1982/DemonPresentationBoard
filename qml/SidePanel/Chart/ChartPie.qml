@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import QtCharts 2.3
+import QtQuick
+import QtCharts
 
 ChartBase{
     id: iroot
